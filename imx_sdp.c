@@ -1376,7 +1376,8 @@ int process_header(struct sdp_dev *dev, struct sdp_work *curr,
 int DoIRomDownload(struct sdp_dev *dev, struct sdp_work *curr, int verify)
 {
 	int ret;
-	struct load_desc ld = {};
+	struct load_desc ld;
+	memset(&ld, 0, sizeof(ld));
 
 	print_sdp_work(curr);
 	ld.curr = curr;
